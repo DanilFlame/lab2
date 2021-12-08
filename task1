@@ -1,0 +1,30 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+
+
+namespace ConsoleApp10
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            StreamWriter p = new StreamWriter("lab.txt");
+            float a, x, y;
+            p.WriteLine(" Results:");
+
+            for(a = 10; a >= 2; a-=2)
+            {
+                p.WriteLine(" a=" + a);
+                for(x = 0; x<=2; x+= 0.05f)
+                {
+                    y = (float)(Math.Pow(a, -x) - Math.Pow(a,-a*x));
+                    p.WriteLine("x = " + x + '\t' + "  y= " + y);
+                }
+            }
+            p.Close();
+        }
+    }
+}
